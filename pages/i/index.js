@@ -12,6 +12,16 @@ Page( {
       url: '../logs/logs'
     })
   },
+   go: function(event) {
+    wx.navigateTo({
+      url: '../live/index?type=' + event.currentTarget.dataset.type
+    })
+  },
+  gos: function(event) {
+    wx.navigateTo({
+      url: '../camera/index?type=' + event.currentTarget.dataset.type
+    })
+  },
   onLoad: function() {
     var that = this
     //调用应用实例的方法获取全局数据

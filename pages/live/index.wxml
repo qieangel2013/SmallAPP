@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+   <video autoplay id="sourcevid" style="width:320;height:240px"></video>
+  <canvas id="output" style="display:none"></canvas>
+</view>
