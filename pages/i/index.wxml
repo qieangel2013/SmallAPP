@@ -5,6 +5,7 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="info">
+  	<button catchtap="go" >录入直播</button>
     <button catchtap="gos" >视频直播</button>
   </view>
 </view>

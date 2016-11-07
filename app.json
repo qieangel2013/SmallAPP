@@ -2,13 +2,13 @@
   "pages":[
     "pages/index/index",
     "pages/list/index",
+    "pages/i/index",
+    "pages/camera/index",
+    "pages/live/index",
     "pages/template/index",
     "pages/component/index",
-    "pages/i/index",
-    "pages/live/index",
-    "pages/logs/logs",
-    "pages/camera/index"
-  ],
+    "pages/logs/logs"
+    ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarTextStyle": "white",
