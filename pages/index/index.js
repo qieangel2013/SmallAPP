@@ -38,7 +38,36 @@ Page( {
       {image: 'https://hamlet.b0.upaiyun.com/1609/22111/fe8765fa7f2f48cd87760c10ddd20ae6.jpg'}
     ]
   },
-
+  updatedata:function(){
+  	console.log( 'ajax' )
+  	var obj=this
+  	wx.request({
+      url: 'https://xcx.tianlian.cn/test.php',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function(res) {
+      	console.log( 'ajax2' );
+        console.log(res.data);
+        obj.setData( {
+        images: res.data
+      })
+    },
+    fail:function(e){
+    	console.log(e)
+    }
+  })
+  },
+  onLoad: function() {
+    var that = this
+    app.getUserInfo( function( userInfo ) {
+      //更新数据
+      that.setData( {
+        userInfo: userInfo
+      })
+    })
+        this.updatedata()
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo( {
@@ -48,32 +77,6 @@ Page( {
   swiperchange: function(e) {
     //FIXME: 当前页码
     //console.log(e.detail.current)
-  },
-
-  onLoad: function() {
-    console.log( 'onLoad' )
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo( function( userInfo ) {
-      //更新数据
-      that.setData( {
-        userInfo: userInfo
-      })
-    })
-    wx.request({
-      url: 'https://xcx.tianlian.cn/test.php',
-      method:'GET',
-      data: {},
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success: function(res) {
-        //console.log(res.data);
-        that.setData( {
-        images: res.data
-      })
-    }
-  })
   },
   go: function(event) {
     wx.navigateTo({
